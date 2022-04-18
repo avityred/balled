@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://fonts/Jellee-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/button-play.gd" type="Script" id=2]
+[ext_resource path="res://button-settings.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 130
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.584314, 0.211765, 0.101961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.54902, 0.160784, 0.0431373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.584314, 0.211765, 0.101961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.709804, 0.262745, 0.141176, 1 )
+shadow_size = 3
+
+[sub_resource type="DynamicFont" id=7]
+size = 70
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+shadow_size = 3
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.560784, 0.14902, 0.14902, 1 )
+
+[node name="Title" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.384
+margin_left = 3.0
+margin_right = 3.0
+margin_bottom = -164.72
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 11
+custom_constants/line_spacing = -150
+custom_constants/shadow_offset_y = 9
+custom_fonts/font = SubResource( 1 )
+text = "Balled
+"
+align = 1
+valign = 1
+
+[node name="button-play" type="Button" parent="."]
+margin_left = 772.0
+margin_top = 401.0
+margin_right = 1155.0
+margin_bottom = 527.0
+custom_colors/font_color_focus = Color( 0.788235, 0.788235, 0.788235, 1 )
+custom_colors/font_color_hover = Color( 0.788235, 0.788235, 0.788235, 1 )
+custom_colors/font_color_pressed = Color( 0.368627, 0.368627, 0.368627, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Play!"
+script = ExtResource( 2 )
+
+[node name="button-settings" type="Button" parent="."]
+margin_left = 772.0
+margin_top = 632.0
+margin_right = 1155.0
+margin_bottom = 758.0
+custom_colors/font_color_disabled = Color( 0.239216, 0.239216, 0.239216, 1 )
+custom_colors/font_color_focus = Color( 0.788235, 0.788235, 0.788235, 1 )
+custom_colors/font_color_hover = Color( 0.788235, 0.788235, 0.788235, 1 )
+custom_colors/font_color_pressed = Color( 0.321569, 0.313726, 0.313726, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+disabled = true
+text = "Options"
+script = ExtResource( 3 )
+
+[connection signal="pressed" from="button-play" to="button-play" method="_on_buttonplay_pressed"]
+[connection signal="pressed" from="button-settings" to="button-settings" method="_on_buttonsettings_pressed"]
